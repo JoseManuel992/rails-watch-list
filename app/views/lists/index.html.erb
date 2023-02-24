@@ -1,0 +1,9 @@
+<h1>List of Movies!</h1>
+
+<ul>
+   <% @lists.each do |list| %>
+      <%= link_to list.name, list  %>
+      <%= link_to "Delete a List", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+   <% end %>
+</ul>
+ <%= link_to "Create a movie list", new_list_path %>
